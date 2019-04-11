@@ -1,8 +1,8 @@
-export default function input(state='', action) {
-  switch(action.type){
-    case 'input':
-    return action.inputData;
-    default:
-    return state;
-  }
+export default  function text(state='',action){
+  switch (action.type) {
+  case 'change':
+  return {...state, [action.payload.name]:action.payload.value}
+  default:
+  return state;
+}
 }

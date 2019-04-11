@@ -1,8 +1,8 @@
-import { combineReducers} from 'redux';
-import input from './inputReducer';
+import {combineReducers} from 'redux';
+import text from './inputReducer'
 
-const rootReducers = combineReducers({
-  input,
+const rootReducer= combineReducers({
+    text,
 })
 
-export default rootReducers;
+export default rootReducer;

@@ -1,6 +1,4 @@
-export const input = (e) => {
-  return{
-    type: 'input',
-    inputData: e.target.value
-  }
-}
+export const change=(ev)=> ({
+  type:'change',
+  payload:ev.target,
+})

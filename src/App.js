@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {input} from './redux/actions/inputAction';
+import {change} from './redux/actions/inputAction';
 
 import './App.css';
 
@@ -8,26 +8,24 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <form>
-          <input type='text' value={this.props.input} onChange={this.props.inputChange} placeholder='Enter input'/>
-        </form>
+          <input type="text" name='mob' onChange={this.props.change} placeholder='Enter mob'/>
+          <input type="text" name='tel' onChange={this.props.change} placeholder='Enter tel'/>
+          <input type="text" name='adress' onChange={this.props.change} placeholder='Enter adress'/>
       </div>
     );
   }
 }
 
-function MSTP (state){
-  return {
-    input: state.input,
+function mapStateToProps(state){
+  return{
+      count:state.count,
   }
-}
-
-function MDTP (dispatch){
-  return {
-    inputChange: function(e){
-      dispatch(input(e))
-    }
   }
-}
+  function mapDispatchToProps(dispatch){
+      return{
+          change:function(ev){
+          dispatch(change(ev))}
+      }
+  }
 
-export default connect(MSTP, MDTP)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
