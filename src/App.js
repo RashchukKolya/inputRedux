@@ -8,9 +8,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <input type="text" name='mob' onChange={this.props.change} placeholder='Enter mob'/>
-          <input type="text" name='tel' onChange={this.props.change} placeholder='Enter tel'/>
-          <input type="text" name='adress' onChange={this.props.change} placeholder='Enter adress'/>
+          <input type="text" name='mob' onChange={this.props.change} value={this.props.text.mob} placeholder='Enter mob'/>
+          <input type="text" name='tel' onChange={this.props.change} value={this.props.text.tel} placeholder='Enter tel'/>
+          <input type="text" name='adress' onChange={this.props.change} value={this.props.text.adress} placeholder='Enter adress'/>
       </div>
     );
   }
@@ -18,7 +18,7 @@ class App extends Component {
 
 function mapStateToProps(state){
   return{
-      count:state.count,
+      text:state.text,
   }
   }
   function mapDispatchToProps(dispatch){
